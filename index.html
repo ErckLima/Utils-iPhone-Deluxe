@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avaliação de iPhone Usado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">iPhone Deluxe BH</h2>
+    <h2 class="text-center mb-4">Avaliação do seu iPhone usado 📱</h2>
+    <form id="avaliacaoForm">
+      
+      <!-- Modelo -->
+      <div class="mb-3">
+        <label class="form-label">1. Qual modelo do seu iPhone?</label>
+        <select class="form-select" id="modelo" required>
+          <option value="" disabled selected>Selecione o modelo</option>
+          <option>iPhone XR</option>
+          <option>iPhone 11</option>
+          <option>iPhone 11 Pro</option>
+          <option>iPhone 11 Pro Max</option>
+          <option>iPhone 12</option>
+          <option>iPhone 12 Mini</option>
+          <option>iPhone 12 Pro</option>
+          <option>iPhone 12 Pro Max</option>
+          <option>iPhone 13</option>
+          <option>iPhone 13 Mini</option>
+          <option>iPhone 13 Pro</option>
+          <option>iPhone 13 Pro Max</option>
+          <option>iPhone 14</option>
+          <option>iPhone 14 Plus</option>
+          <option>iPhone 14 Pro</option>
+          <option>iPhone 14 Pro Max</option>
+          <option>iPhone 15</option>
+          <option>iPhone 15 Plus</option>
+          <option>iPhone 15 Pro</option>
+          <option>iPhone 15 Pro Max</option>
+        </select>
+      </div>
+
+      <!-- Cor -->
+      <div class="mb-3">
+        <label class="form-label">Cor</label>
+        <select class="form-select" id="cor" required>
+          <option value="" disabled selected>Selecione a cor</option>
+          <option>Preto</option>
+          <option>Branco</option>
+          <option>Vermelho</option>
+          <option>Azul</option>
+          <option>Verde</option>
+          <option>Roxo</option>
+          <option>Rosa</option>
+          <option>Dourado</option>
+          <option>Prateado</option>
+          <option>Grafite</option>
+          <option>Titânio Natural</option>
+          <option>Azul Titânio</option>
+          <option>Preto Titânio</option>
+        </select>
+      </div>
+
+      <!-- Armazenamento -->
+      <div class="mb-3">
+        <label class="form-label">Armazenamento (GB)</label>
+        <select class="form-select" id="armazenamento" required>
+          <option value="" disabled selected>Selecione o armazenamento</option>
+          <option>64 GB</option>
+          <option>128 GB</option>
+          <option>256 GB</option>
+          <option>512 GB</option>
+          <option>1 TB</option>
+        </select>
+      </div>
+
+      <!-- Marcas de uso -->
+      <div class="mb-3">
+        <label class="form-label">2. Possui marcas de uso? Riscos, trincados ou defeitos?</label>
+        <textarea class="form-control" id="marcas" rows="3" required></textarea>
+      </div>
+
+      <!-- Saúde da bateria -->
+      <div class="mb-3">
+        <label class="form-label">3. Qual a porcentagem da Saúde da Bateria?</label>
+        <select class="form-select" id="bateria" required>
+            <option value="" disabled selected>Selecione a porcentagem</option>
+            <option>Abaixo de 85%</option>
+            <option>86%</option>
+            <option>87%</option>
+            <option>88%</option>
+            <option>89%</option>
+            <option>90%</option>
+            <option>91%</option>
+            <option>92%</option>
+            <option>93%</option>
+            <option>94%</option>
+            <option>95%</option>
+            <option>96%</option>
+            <option>97%</option>
+            <option>98%</option>
+            <option>99%</option>
+            <option>100%</option>
+          </select>
+      </div>
+
+      <!-- Manutenção -->
+      <div class="mb-3">
+        <label class="form-label">4. Já passou por algum tipo de manutenção?</label>
+        <textarea class="form-control" id="manutencao" rows="2" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">Enviar para WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('avaliacaoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const modelo = document.getElementById('modelo').value;
+      const cor = document.getElementById('cor').value;
+      const armazenamento = document.getElementById('armazenamento').value;
+      const marcas = document.getElementById('marcas').value;
+      const bateria = document.getElementById('bateria').value;
+      const manutencao = document.getElementById('manutencao').value;
+
+      const mensagem = `Olá! Gostaria de fazer a avaliação do meu iPhone usado:\n\n1️⃣ *Modelo:* ${modelo} - ${cor} - ${armazenamento}\n\n2️⃣ *Marcas de uso / Defeitos:* ${marcas}\n\n3️⃣ *Saúde da Bateria:* ${bateria}\n\n4️⃣ *Já teve manutenção?* ${manutencao}`;
+
+      const url = `https://wa.me/553132844876?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+
+</body>
+</html>
