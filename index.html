@@ -126,7 +126,7 @@
       const bateria = document.getElementById('bateria').value;
       const manutencao = document.getElementById('manutencao').value;
 
-      const mensagem = `Olá! Gostaria de fazer a avaliação do meu iPhone usado:\n\n1️⃣ *Modelo:* ${modelo} - ${cor} - ${armazenamento}\n\n2️⃣ *Marcas de uso / Defeitos:* ${marcas}\n\n3️⃣ *Saúde da Bateria:* ${bateria}\n\n4️⃣ *Já teve manutenção?* ${manutencao}`;
+      const mensagem = `Olá! Segue dados do meu iPhone para avaliação:\n\n1️⃣ *Modelo:* ${modelo} - ${cor} - ${armazenamento}\n\n2️⃣ *Marcas de uso / Defeitos:* ${marcas}\n\n3️⃣ *Saúde da Bateria:* ${bateria}\n\n4️⃣ *Já teve manutenção?* ${manutencao}`;
 
       const url = `https://wa.me/553132844876?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
